@@ -4937,11 +4937,20 @@ async function startSubscription() {
       }
       const tab = tabs[0];
       if (tab.id) {
-        const response = await chrome.tabs.sendMessage(tab.id, {
-          type: command.type,
-          amount: command.amount
-        });
-        console.log("[Pathoma Controller] Command executed:", response);
+        const frames = await chrome.webNavigation.getAllFrames({ tabId: tab.id });
+        if (frames) {
+          for (const frame of frames) {
+            try {
+              const response = await chrome.tabs.sendMessage(
+                tab.id,
+                { type: command.type, amount: command.amount },
+                { frameId: frame.frameId }
+              );
+              console.log(`[Pathoma Controller] Command executed in frame ${frame.frameId}:`, response);
+            } catch (e) {
+            }
+          }
+        }
       }
     } catch (error) {
       console.error("[Pathoma Controller] Failed to send command to content script:", error);

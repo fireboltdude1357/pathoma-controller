@@ -3,7 +3,7 @@
   "name": "Pathoma Controller",
   "description": "Remote video control for pcloud.link",
   "version": "1.0.0",
-  "permissions": ["storage", "alarms", "tabs"],
+  "permissions": ["storage", "alarms", "tabs", "webNavigation"],
   "host_permissions": [
     "*://*.pcloud.link/*",
     "*://u.pcloud.link/*"
@@ -16,7 +16,8 @@
     {
       "matches": ["*://*.pcloud.link/*", "*://u.pcloud.link/*"],
       "js": ["dist/content.js"],
-      "run_at": "document_idle"
+      "run_at": "document_idle",
+      "all_frames": true
     }
   ]
 }

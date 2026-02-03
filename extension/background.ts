@@ -54,14 +54,25 @@ async function startSubscription(): Promise<void> {
         return;
       }
 
-      // Send to first matching tab
+      // Send to first matching tab (all frames)
       const tab = tabs[0];
       if (tab.id) {
-        const response = await chrome.tabs.sendMessage(tab.id, {
-          type: command.type,
-          amount: command.amount,
-        });
-        console.log('[Pathoma Controller] Command executed:', response);
+        // Get all frames in the tab
+        const frames = await chrome.webNavigation.getAllFrames({ tabId: tab.id });
+        if (frames) {
+          for (const frame of frames) {
+            try {
+              const response = await chrome.tabs.sendMessage(
+                tab.id,
+                { type: command.type, amount: command.amount },
+                { frameId: frame.frameId }
+              );
+              console.log(`[Pathoma Controller] Command executed in frame ${frame.frameId}:`, response);
+            } catch (e) {
+              // Content script not loaded in this frame, skip
+            }
+          }
+        }
       }
     } catch (error) {
       console.error('[Pathoma Controller] Failed to send command to content script:', error);
