@@ -1,5 +1,6 @@
 import { ConvexClient } from 'convex/browser';
 import { api } from '../convex/_generated/api';
+import { Id } from '../convex/_generated/dataModel';
 
 // Convex URL injected at build time
 declare const process: { env: { CONVEX_URL: string } };
@@ -35,6 +36,11 @@ export function subscribeToCommands(
   );
 
   return unsubscribe;
+}
+
+export async function acknowledgeCommand(commandId: Id<"commands">): Promise<void> {
+  const convex = getConvexClient();
+  await convex.mutation(api.commands.acknowledge, { commandId });
 }
 
 export { api };
