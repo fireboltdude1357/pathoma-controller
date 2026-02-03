@@ -45,9 +45,27 @@ async function startSubscription(): Promise<void> {
     // Store the command ID to prevent re-processing after restart
     await setState({ lastCommandId: command._id });
 
-    // TODO (Phase 4): Forward command to content script for execution
-    // For now, just log that we received it
-    console.log('[Pathoma Controller] Command queued for execution');
+    // Forward command to content script on pcloud.link tabs
+    try {
+      const tabs = await chrome.tabs.query({ url: '*://*.pcloud.link/*' });
+
+      if (tabs.length === 0) {
+        console.warn('[Pathoma Controller] No pcloud.link tab found');
+        return;
+      }
+
+      // Send to first matching tab
+      const tab = tabs[0];
+      if (tab.id) {
+        const response = await chrome.tabs.sendMessage(tab.id, {
+          type: command.type,
+          amount: command.amount,
+        });
+        console.log('[Pathoma Controller] Command executed:', response);
+      }
+    } catch (error) {
+      console.error('[Pathoma Controller] Failed to send command to content script:', error);
+    }
   });
 
   await setState({ connected: true });
