@@ -1,4 +1,4 @@
-import { subscribeToCommands, getConvexClient, api } from './convex-client';
+import { subscribeToCommands, getConvexClient, api, acknowledgeCommand } from './convex-client';
 
 console.log('[Pathoma Controller] Service worker starting');
 
@@ -46,6 +46,7 @@ async function startSubscription(): Promise<void> {
     await setState({ lastCommandId: command._id });
 
     // Forward command to content script on pcloud.link tabs
+    let commandExecuted = false;
     try {
       const tabs = await chrome.tabs.query({ url: '*://*.pcloud.link/*' });
 
@@ -68,6 +69,11 @@ async function startSubscription(): Promise<void> {
                 { frameId: frame.frameId }
               );
               console.log(`[Pathoma Controller] Command executed in frame ${frame.frameId}:`, response);
+
+              // Check if command was successful
+              if (response && response.success === true) {
+                commandExecuted = true;
+              }
             } catch (e) {
               // Content script not loaded in this frame, skip
             }
@@ -76,6 +82,16 @@ async function startSubscription(): Promise<void> {
       }
     } catch (error) {
       console.error('[Pathoma Controller] Failed to send command to content script:', error);
+    }
+
+    // Acknowledge command if it was successfully executed
+    if (commandExecuted) {
+      try {
+        await acknowledgeCommand(command._id);
+        console.log('[Pathoma Controller] Command acknowledged:', command._id);
+      } catch (error) {
+        console.error('[Pathoma Controller] Failed to acknowledge command:', error);
+      }
     }
   });
 

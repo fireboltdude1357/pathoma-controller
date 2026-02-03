@@ -4901,6 +4901,10 @@ function subscribeToCommands(onCommand) {
   );
   return unsubscribe2;
 }
+async function acknowledgeCommand(commandId) {
+  const convex = getConvexClient();
+  await convex.mutation(api.commands.acknowledge, { commandId });
+}
 
 // extension/background.ts
 console.log("[Pathoma Controller] Service worker starting");
@@ -4929,6 +4933,7 @@ async function startSubscription() {
     }
     console.log("[Pathoma Controller] New command:", command.type, command.amount);
     await setState({ lastCommandId: command._id });
+    let commandExecuted = false;
     try {
       const tabs = await chrome.tabs.query({ url: "*://*.pcloud.link/*" });
       if (tabs.length === 0) {
@@ -4947,6 +4952,9 @@ async function startSubscription() {
                 { frameId: frame.frameId }
               );
               console.log(`[Pathoma Controller] Command executed in frame ${frame.frameId}:`, response);
+              if (response && response.success === true) {
+                commandExecuted = true;
+              }
             } catch (e) {
             }
           }
@@ -4954,6 +4962,14 @@ async function startSubscription() {
       }
     } catch (error) {
       console.error("[Pathoma Controller] Failed to send command to content script:", error);
+    }
+    if (commandExecuted) {
+      try {
+        await acknowledgeCommand(command._id);
+        console.log("[Pathoma Controller] Command acknowledged:", command._id);
+      } catch (error) {
+        console.error("[Pathoma Controller] Failed to acknowledge command:", error);
+      }
     }
   });
   await setState({ connected: true });
