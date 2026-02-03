@@ -9,9 +9,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Feasibility
 
-- [ ] **SPIKE-01**: Validate HTMLMediaElement API works on pcloud.link video player
-- [ ] **SPIKE-02**: Confirm content script can inject and access video element
-- [ ] **SPIKE-03**: Test play, pause, seek, and playbackRate controls
+- [x] **SPIKE-01**: Validate HTMLMediaElement API works on pcloud.link video player
+- [x] **SPIKE-02**: Confirm content script can inject and access video element
+- [x] **SPIKE-03**: Test play, pause, seek, and playbackRate controls
 
 ### Authentication
 
@@ -86,9 +86,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SPIKE-01 | Phase 0 | Pending |
-| SPIKE-02 | Phase 0 | Pending |
-| SPIKE-03 | Phase 0 | Pending |
+| SPIKE-01 | Phase 0 | Complete |
+| SPIKE-02 | Phase 0 | Complete |
+| SPIKE-03 | Phase 0 | Complete |
 | AUTH-01 | Phase 1 | Pending |
 | AUTH-02 | Phase 1 | Pending |
 | AUTH-03 | Phase 1 | Pending |

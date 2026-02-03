@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-02-02)
 
 **Core value:** She can control video playback without interrupting his work flow.
-**Current focus:** Phase 0 - Feasibility Spike
+**Current focus:** Phase 1 - Backend Foundation (next)
 
 ## Current Position
 
