@@ -58,10 +58,11 @@ Plans:
   2. User can trigger play, pause, seek, and speed commands via buttons
   3. Web app shows connection status indicator (connected/disconnected to Convex)
   4. Commands are successfully written to Convex and visible in dashboard
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- (Pending planning)
+- [ ] 02-01-PLAN.md — Auth UI and command buttons wired to Convex
+- [ ] 02-02-PLAN.md — Connection status indicator and verification
 
 ### Phase 3: Extension Foundation
 **Goal**: Chrome extension with service worker that receives commands via Convex real-time subscription
@@ -115,11 +116,11 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 0. Feasibility Spike | 1/1 | Complete | 2026-02-02 |
 | 1. Backend Foundation | 2/2 | Complete | 2026-02-03 |
-| 2. Web Controller App | 0/0 | Not started | - |
+| 2. Web Controller App | 0/2 | Ready | - |
 | 3. Extension Foundation | 0/0 | Not started | - |
 | 4. Video Control | 0/0 | Not started | - |
 | 5. Integration & Polish | 0/0 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-03 (Phase 1 complete)*
+*Last updated: 2026-02-03 (Phase 2 planned)*
