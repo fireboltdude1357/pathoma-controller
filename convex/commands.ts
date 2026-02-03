@@ -42,8 +42,8 @@ export const send = mutation({
       user = await ctx.db.get(userId);
     }
 
-    // Check if user is authorized (must be "user" or "admin")
-    if (user?.userType !== "user" && user?.userType !== "admin") {
+    // Check if user is authorized (must not be "blocked")
+    if (user?.userType === "blocked") {
       throw new Error("Not authorized. Your account is pending approval.");
     }
 

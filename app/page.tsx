@@ -1,10 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   UserButton,
+  useUser,
 } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -13,6 +15,15 @@ import { CommandFeedback } from "./components/CommandFeedback";
 
 export default function Home() {
   const sendCommand = useMutation(api.commands.send);
+  const ensureUser = useMutation(api.users.ensureUser);
+  const { isSignedIn } = useUser();
+
+  // Ensure user exists in database on page load
+  useEffect(() => {
+    if (isSignedIn) {
+      ensureUser();
+    }
+  }, [isSignedIn, ensureUser]);
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-zinc-950">
       {/* Header */}
