@@ -89,10 +89,11 @@ Plans:
   3. User can seek forward by 1s, 5s, 10s, 30s from web app
   4. User can decrease and increase playback speed by 0.1x from web app
   5. Commands execute within 500ms of button press
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- (Pending planning)
+- [ ] 04-01-PLAN.md - Content script with video control and service worker messaging
+- [ ] 04-02-PLAN.md - End-to-end verification of all 12 playback controls
 
 ### Phase 5: Integration & Polish
 **Goal**: End-to-end command acknowledgment, error handling, and production readiness
@@ -119,9 +120,9 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 | 1. Backend Foundation | 2/2 | Complete | 2026-02-03 |
 | 2. Web Controller App | 2/2 | Complete | 2026-02-03 |
 | 3. Extension Foundation | 2/2 | Complete | 2026-02-03 |
-| 4. Video Control | 0/0 | Ready | - |
+| 4. Video Control | 0/2 | In Progress | - |
 | 5. Integration & Polish | 0/0 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-03 (Phase 3 complete)*
+*Last updated: 2026-02-03 (Phase 4 planned)*
