@@ -43,10 +43,11 @@ Plans:
   2. Only authorized emails (in Convex users table) can create commands
   3. Commands are stored in Convex and queryable via real-time subscriptions
   4. Admin can authorize users by adding emails directly in Convex dashboard
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- (Pending planning)
+- [ ] 01-01-PLAN.md - Project setup with Next.js, Convex, Clerk and schema definition
+- [ ] 01-02-PLAN.md - Clerk auth middleware, Convex functions, and authorization wiring
 
 ### Phase 2: Web Controller App
 **Goal**: Next.js web app where authorized user can send playback commands and see connection status
@@ -108,12 +109,12 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 0 → 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 0. Feasibility Spike | 1/1 | Complete | 2026-02-02 |
-| 1. Backend Foundation | 0/0 | Not started | - |
+| 1. Backend Foundation | 0/2 | Not started | - |
 | 2. Web Controller App | 0/0 | Not started | - |
 | 3. Extension Foundation | 0/0 | Not started | - |
 | 4. Video Control | 0/0 | Not started | - |
@@ -121,4 +122,4 @@ Phases execute in numeric order: 0 → 1 → 2 → 3 → 4 → 5
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-02 (Phase 0 complete)*
+*Last updated: 2026-02-02 (Phase 1 planned)*
