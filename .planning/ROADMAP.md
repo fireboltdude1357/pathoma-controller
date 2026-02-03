@@ -73,10 +73,11 @@ Plans:
   2. Service worker maintains Convex subscription and receives commands in real-time
   3. Extension auto-reconnects when connection drops (survives service worker termination)
   4. Extension persists authentication state across service worker restarts
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- (Pending planning)
+- [ ] 03-01-PLAN.md - Extension manifest and service worker skeleton
+- [ ] 03-02-PLAN.md - Convex subscription with reconnection and state persistence
 
 ### Phase 4: Video Control
 **Goal**: Content script executes commands on pcloud.link video player using HTMLMediaElement API
