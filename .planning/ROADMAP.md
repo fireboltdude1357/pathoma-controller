@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 0: Feasibility Spike** - Validate HTMLMediaElement API works on pcloud.link before full investment
 - [x] **Phase 1: Backend Foundation** - Convex schema, Clerk authentication, real-time command infrastructure
-- [ ] **Phase 2: Web Controller App** - Next.js app with command UI and connection status
+- [x] **Phase 2: Web Controller App** - Next.js app with command UI and connection status
 - [ ] **Phase 3: Extension Foundation** - Chrome extension with Convex subscription and service worker lifecycle
 - [ ] **Phase 4: Video Control** - Content script that executes commands on pcloud.link video player
 - [ ] **Phase 5: Integration & Polish** - End-to-end acknowledgments, error handling, production readiness
@@ -61,8 +61,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Auth UI and command buttons wired to Convex
-- [ ] 02-02-PLAN.md — Connection status indicator and verification
+- [x] 02-01-PLAN.md — Auth UI and command buttons wired to Convex
+- [x] 02-02-PLAN.md — Connection status indicator and verification
 
 ### Phase 3: Extension Foundation
 **Goal**: Chrome extension with service worker that receives commands via Convex real-time subscription
@@ -116,11 +116,11 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 0. Feasibility Spike | 1/1 | Complete | 2026-02-02 |
 | 1. Backend Foundation | 2/2 | Complete | 2026-02-03 |
-| 2. Web Controller App | 0/2 | Ready | - |
-| 3. Extension Foundation | 0/0 | Not started | - |
+| 2. Web Controller App | 2/2 | Complete | 2026-02-03 |
+| 3. Extension Foundation | 0/0 | Ready | - |
 | 4. Video Control | 0/0 | Not started | - |
 | 5. Integration & Polish | 0/0 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-03 (Phase 2 planned)*
+*Last updated: 2026-02-03 (Phase 2 complete)*

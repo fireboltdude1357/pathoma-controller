@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-02)
 
 **Core value:** She can control video playback without interrupting his work flow.
-**Current focus:** Phase 2 - Web Controller (in progress)
+**Current focus:** Phase 3 - Extension Foundation (ready to start)
 
 ## Current Position
 
-Phase: 2 of 5 (Web Controller App)
-Plan: 1 of 1 in current phase
+Phase: 2 of 5 (Web Controller App) - COMPLETE
+Plan: 2 of 2 in current phase
 Status: Phase complete
-Last activity: 2026-02-03 - Completed 02-01-PLAN.md
+Last activity: 2026-02-03 - Completed 02-02-PLAN.md
 
-Progress: [████████░░] 80%
+Progress: [██████░░░░] 60%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: ~2.6 min
-- Total execution time: ~10.4 min
+- Total plans completed: 5
+- Average duration: ~3 min
+- Total execution time: ~15 min
 
 **By Phase:**
 
@@ -29,11 +29,11 @@ Progress: [████████░░] 80%
 |-------|-------|-------|----------|
 | 00-feasibility-spike | 1 | < 1 min | < 1 min |
 | 01-backend-foundation | 2 | 7 min | 3.5 min |
-| 02-web-controller-app | 1 | 2.4 min | 2.4 min |
+| 02-web-controller-app | 2 | 7.4 min | 3.7 min |
 
 **Recent Trend:**
-- Last 5 plans: 00-01 (< 1 min), 01-01 (2 min), 01-02 (~5 min), 02-01 (2.4 min)
-- Trend: Consistent fast execution
+- Last 5 plans: 01-01 (2 min), 01-02 (~5 min), 02-01 (2.4 min), 02-02 (~5 min)
+- Trend: Consistent execution, checkpoint plans take slightly longer
 
 *Updated after each plan completion*
 
@@ -56,6 +56,8 @@ Recent decisions affecting current work:
 - [Phase 2]: Play/Pause buttons use color coding (green/red) for quick recognition
 - [Phase 2]: Seek controls organized in labeled rows with 4 time increments each
 - [Phase 2]: Speed controls use distinct blue color to separate from seek buttons
+- [Phase 2]: Auto-create users on first authenticated command (replaces manual Convex dashboard creation)
+- [Phase 2]: ConnectionStatus uses polling interval for connection state (1s)
 
 ### Pending Todos
 
@@ -68,5 +70,5 @@ None - web controller complete and ready for Chrome extension integration.
 ## Session Continuity
 
 Last session: 2026-02-03
-Stopped at: Completed 02-01-PLAN.md - Phase 2 complete, web controller UI ready
+Stopped at: Completed Phase 2 - Web Controller App complete with auth, commands, connection status
 Resume file: None

@@ -36,7 +36,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Connection
 
-- [ ] **CONN-01**: Web app shows connection status (connected/disconnected)
+- [x] **CONN-01**: Web app shows connection status (connected/disconnected)
 - [ ] **CONN-02**: Extension auto-reconnects when connection drops
 - [ ] **CONN-03**: Web app shows command acknowledgment (command received by extension)
 
@@ -104,7 +104,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PLAY-10 | Phase 4 | Pending |
 | PLAY-11 | Phase 4 | Pending |
 | PLAY-12 | Phase 4 | Pending |
-| CONN-01 | Phase 2 | Pending |
+| CONN-01 | Phase 2 | Complete |
 | CONN-02 | Phase 3 | Pending |
 | CONN-03 | Phase 5 | Pending |
 | EXT-01 | Phase 3 | Pending |
@@ -119,4 +119,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-02-02*
-*Last updated: 2026-02-03 (Phase 1 requirements complete)*
+*Last updated: 2026-02-03 (Phase 2 requirements complete)*
