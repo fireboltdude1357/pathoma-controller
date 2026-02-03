@@ -6,6 +6,9 @@ export default defineSchema({
   users: defineTable({
     email: v.string(),
     name: v.optional(v.string()),
+    // User type: "blocked" (default), "user", or "admin"
+    // Only "user" and "admin" can access the control page
+    userType: v.optional(v.union(v.literal("blocked"), v.literal("user"), v.literal("admin"))),
     createdAt: v.number(),
   }).index("by_email", ["email"]),
 

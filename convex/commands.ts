@@ -31,13 +31,20 @@ export const send = mutation({
       .withIndex("by_email", (q) => q.eq("email", email))
       .unique();
 
-    // Auto-create user if they don't exist
+    // Auto-create user if they don't exist (defaults to blocked)
     if (!user) {
-      await ctx.db.insert("users", {
+      const userId = await ctx.db.insert("users", {
         email,
         name: identity.name ?? undefined,
+        userType: "blocked",
         createdAt: Date.now(),
       });
+      user = await ctx.db.get(userId);
+    }
+
+    // Check if user is authorized (must be "user" or "admin")
+    if (user?.userType !== "user" && user?.userType !== "admin") {
+      throw new Error("Not authorized. Your account is pending approval.");
     }
 
     // Create command

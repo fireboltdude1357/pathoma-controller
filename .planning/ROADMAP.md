@@ -104,10 +104,11 @@ Plans:
   2. Extension handles errors gracefully (video not found, network issues, etc.)
   3. System works reliably with multiple pcloud.link tabs open (targets correct tab)
   4. All 22 v1 requirements verified working end-to-end
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- (Pending planning)
+- [ ] 05-01-PLAN.md — Extension acknowledgment flow (calls acknowledge mutation after execution)
+- [ ] 05-02-PLAN.md — Web app acknowledgment UI and final v1 verification checkpoint
 
 ## Progress
 
@@ -121,8 +122,8 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 | 2. Web Controller App | 2/2 | Complete | 2026-02-03 |
 | 3. Extension Foundation | 2/2 | Complete | 2026-02-03 |
 | 4. Video Control | 2/2 | Complete | 2026-02-03 |
-| 5. Integration & Polish | 0/0 | Not started | - |
+| 5. Integration & Polish | 0/2 | In progress | - |
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-03 (Phase 4 complete)*
+*Last updated: 2026-02-03 (Phase 5 planned)*

@@ -1,7 +1,7 @@
 import { query } from "./_generated/server";
 import { v } from "convex/values";
 
-// Check if a user's email is in the authorized users list
+// Check if a user is authorized (userType is "user" or "admin")
 export const isAuthorized = query({
   args: { email: v.string() },
   handler: async (ctx, args) => {
@@ -9,7 +9,9 @@ export const isAuthorized = query({
       .query("users")
       .withIndex("by_email", (q) => q.eq("email", args.email))
       .unique();
-    return user !== null;
+    if (!user) return false;
+    // User must have userType "user" or "admin" to be authorized
+    return user.userType === "user" || user.userType === "admin";
   },
 });
 
