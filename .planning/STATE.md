@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-02)
 
 **Core value:** She can control video playback without interrupting his work flow.
-**Current focus:** Phase 3 - Extension Foundation (ready to start)
+**Current focus:** Phase 3 - Extension Foundation (in progress)
 
 ## Current Position
 
-Phase: 2 of 5 (Web Controller App) - COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-02-03 - Completed 02-02-PLAN.md
+Phase: 3 of 5 (Extension Foundation) - IN PROGRESS
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-03 - Completed 03-01-PLAN.md
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 86%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: ~3 min
-- Total execution time: ~15 min
+- Total plans completed: 6
+- Average duration: ~2.7 min
+- Total execution time: ~16.3 min
 
 **By Phase:**
 
@@ -30,10 +30,11 @@ Progress: [██████░░░░] 60%
 | 00-feasibility-spike | 1 | < 1 min | < 1 min |
 | 01-backend-foundation | 2 | 7 min | 3.5 min |
 | 02-web-controller-app | 2 | 7.4 min | 3.7 min |
+| 03-extension-foundation | 1 | 1.3 min | 1.3 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2 min), 01-02 (~5 min), 02-01 (2.4 min), 02-02 (~5 min)
-- Trend: Consistent execution, checkpoint plans take slightly longer
+- Last 5 plans: 01-02 (~5 min), 02-01 (2.4 min), 02-02 (~5 min), 03-01 (1.3 min)
+- Trend: Fast execution for auto-only plans, checkpoint plans take longer
 
 *Updated after each plan completion*
 
@@ -58,6 +59,9 @@ Recent decisions affecting current work:
 - [Phase 2]: Speed controls use distinct blue color to separate from seek buttons
 - [Phase 2]: Auto-create users on first authenticated command (replaces manual Convex dashboard creation)
 - [Phase 2]: ConnectionStatus uses polling interval for connection state (1s)
+- [Phase 3]: Simple tsc compilation initially, bundler deferred to Plan 02
+- [Phase 3]: DOM lib for service worker globals (fetch, WebSocket APIs)
+- [Phase 3]: pcloud.link host_permissions for domain-restricted activation
 
 ### Pending Todos
 
@@ -65,10 +69,10 @@ None yet.
 
 ### Blockers/Concerns
 
-None - web controller complete and ready for Chrome extension integration.
+None - extension skeleton loads successfully in Chrome, ready for Convex integration.
 
 ## Session Continuity
 
 Last session: 2026-02-03
-Stopped at: Completed Phase 2 - Web Controller App complete with auth, commands, connection status
+Stopped at: Completed 03-01-PLAN.md - Extension skeleton with service worker
 Resume file: None
