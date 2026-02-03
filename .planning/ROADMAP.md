@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 0: Feasibility Spike** - Validate HTMLMediaElement API works on pcloud.link before full investment
 - [x] **Phase 1: Backend Foundation** - Convex schema, Clerk authentication, real-time command infrastructure
 - [x] **Phase 2: Web Controller App** - Next.js app with command UI and connection status
-- [ ] **Phase 3: Extension Foundation** - Chrome extension with Convex subscription and service worker lifecycle
+- [x] **Phase 3: Extension Foundation** - Chrome extension with Convex subscription and service worker lifecycle
 - [ ] **Phase 4: Video Control** - Content script that executes commands on pcloud.link video player
 - [ ] **Phase 5: Integration & Polish** - End-to-end acknowledgments, error handling, production readiness
 
@@ -76,8 +76,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md - Extension manifest and service worker skeleton
-- [ ] 03-02-PLAN.md - Convex subscription with reconnection and state persistence
+- [x] 03-01-PLAN.md - Extension manifest and service worker skeleton
+- [x] 03-02-PLAN.md - Convex subscription with reconnection and state persistence
 
 ### Phase 4: Video Control
 **Goal**: Content script executes commands on pcloud.link video player using HTMLMediaElement API
@@ -118,10 +118,10 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 | 0. Feasibility Spike | 1/1 | Complete | 2026-02-02 |
 | 1. Backend Foundation | 2/2 | Complete | 2026-02-03 |
 | 2. Web Controller App | 2/2 | Complete | 2026-02-03 |
-| 3. Extension Foundation | 0/0 | Ready | - |
-| 4. Video Control | 0/0 | Not started | - |
+| 3. Extension Foundation | 2/2 | Complete | 2026-02-03 |
+| 4. Video Control | 0/0 | Ready | - |
 | 5. Integration & Polish | 0/0 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-03 (Phase 2 complete)*
+*Last updated: 2026-02-03 (Phase 3 complete)*

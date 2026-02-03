@@ -37,13 +37,13 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Connection
 
 - [x] **CONN-01**: Web app shows connection status (connected/disconnected)
-- [ ] **CONN-02**: Extension auto-reconnects when connection drops
+- [x] **CONN-02**: Extension auto-reconnects when connection drops
 - [ ] **CONN-03**: Web app shows command acknowledgment (command received by extension)
 
 ### Extension
 
-- [ ] **EXT-01**: Extension targets pcloud.link tabs
-- [ ] **EXT-02**: Extension subscribes to commands via Convex real-time
+- [x] **EXT-01**: Extension targets pcloud.link tabs
+- [x] **EXT-02**: Extension subscribes to commands via Convex real-time
 - [ ] **EXT-03**: Extension executes commands via HTMLMediaElement API (not keyboard simulation)
 - [ ] **EXT-04**: Extension sends acknowledgment after command execution
 
@@ -105,10 +105,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PLAY-11 | Phase 4 | Pending |
 | PLAY-12 | Phase 4 | Pending |
 | CONN-01 | Phase 2 | Complete |
-| CONN-02 | Phase 3 | Pending |
+| CONN-02 | Phase 3 | Complete |
 | CONN-03 | Phase 5 | Pending |
-| EXT-01 | Phase 3 | Pending |
-| EXT-02 | Phase 3 | Pending |
+| EXT-01 | Phase 3 | Complete |
+| EXT-02 | Phase 3 | Complete |
 | EXT-03 | Phase 4 | Pending |
 | EXT-04 | Phase 5 | Pending |
 
@@ -119,4 +119,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-02-02*
-*Last updated: 2026-02-03 (Phase 2 requirements complete)*
+*Last updated: 2026-02-03 (Phase 3 requirements complete)*
