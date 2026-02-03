@@ -4876,7 +4876,7 @@ var api = anyApi;
 var components = componentsGeneric();
 
 // extension/convex-client.ts
-var CONVEX_URL = "";
+var CONVEX_URL = "https://fiery-scorpion-941.convex.cloud";
 var client = null;
 function getConvexClient() {
   if (!client) {

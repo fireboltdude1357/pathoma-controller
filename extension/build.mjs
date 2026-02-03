@@ -1,4 +1,26 @@
 import * as esbuild from 'esbuild';
+import { readFileSync } from 'fs';
+
+// Load .env.local manually (avoid adding dotenv dependency)
+function loadEnv() {
+  try {
+    const envFile = readFileSync('.env.local', 'utf-8');
+    for (const line of envFile.split('\n')) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#')) {
+        const [key, ...valueParts] = trimmed.split('=');
+        const value = valueParts.join('=');
+        if (key && value) {
+          process.env[key] = value;
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Warning: Could not load .env.local');
+  }
+}
+
+loadEnv();
 
 await esbuild.build({
   entryPoints: ['extension/background.ts'],
