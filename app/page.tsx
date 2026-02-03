@@ -9,6 +9,7 @@ import {
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { ConnectionStatus } from "./components/ConnectionStatus";
+import { CommandFeedback } from "./components/CommandFeedback";
 
 export default function Home() {
   const sendCommand = useMutation(api.commands.send);
@@ -21,6 +22,7 @@ export default function Home() {
         </h1>
         <div className="flex items-center gap-6">
           <ConnectionStatus />
+          <CommandFeedback />
           <SignedIn>
             <UserButton />
           </SignedIn>
