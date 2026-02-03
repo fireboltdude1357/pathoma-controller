@@ -20,19 +20,24 @@ export const send = mutation({
       throw new Error("Not authenticated");
     }
 
-    // Check if user is authorized
+    // Get or create user
     const email = identity.email;
     if (!email) {
       throw new Error("No email in identity");
     }
 
-    const authorizedUser = await ctx.db
+    let user = await ctx.db
       .query("users")
       .withIndex("by_email", (q) => q.eq("email", email))
       .unique();
 
-    if (!authorizedUser) {
-      throw new Error("User not authorized");
+    // Auto-create user if they don't exist
+    if (!user) {
+      await ctx.db.insert("users", {
+        email,
+        name: identity.name ?? undefined,
+        createdAt: Date.now(),
+      });
     }
 
     // Create command
