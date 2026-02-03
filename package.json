@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:extension": "tsc -p extension/tsconfig.json"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.37.1",
