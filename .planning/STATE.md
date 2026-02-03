@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-02)
 
 **Core value:** She can control video playback without interrupting his work flow.
-**Current focus:** Phase 3 - Extension Foundation (in progress)
+**Current focus:** Phase 4 - Video Control (in progress)
 
 ## Current Position
 
-Phase: 3 of 5 (Extension Foundation) - COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase complete - ready for Phase 04
-Last activity: 2026-02-03 - Completed 03-02-PLAN.md
+Phase: 4 of 5 (Video Control)
+Plan: 1 of 1 in current phase
+Status: Phase complete - ready for Phase 05
+Last activity: 2026-02-03 - Completed 04-01-PLAN.md
 
-Progress: [█████████░] 100%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: ~3.5 min automated work (checkpoint plans vary)
-- Total execution time: ~18 min automated work
+- Total plans completed: 8
+- Average duration: ~3.3 min automated work (checkpoint plans vary)
+- Total execution time: ~21 min automated work
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [█████████░] 100%
 | 01-backend-foundation | 2 | 7 min | 3.5 min |
 | 02-web-controller-app | 2 | 7.4 min | 3.7 min |
 | 03-extension-foundation | 2 | 3.3 min | 1.7 min |
+| 04-video-control | 1 | 3 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (2.4 min), 02-02 (~5 min), 03-01 (1.3 min), 03-02 (2 min automated)
+- Last 5 plans: 02-02 (~5 min), 03-01 (1.3 min), 03-02 (2 min automated), 04-01 (3 min)
 - Trend: Consistent fast execution; checkpoint verification adds user time (not automation time)
 
 *Updated after each plan completion*
@@ -67,6 +68,11 @@ Recent decisions affecting current work:
 - [Phase 3]: chrome.alarms at 30s interval for WebSocket keep-alive
 - [Phase 3]: lastCommandId tracking to prevent duplicate command processing
 - [Phase 3]: chrome.storage.local for state persistence across restarts
+- [Phase 4]: chrome.tabs.query with pcloud.link URL pattern for tab targeting
+- [Phase 4]: Speed bounds: 0.1x to 4.0x playback rate for safety
+- [Phase 4]: Seek bounds: clamp currentTime to [0, duration]
+- [Phase 4]: @types/chrome for TypeScript chrome API types
+- [Phase 4]: skipLibCheck in tsconfig to handle convex imports from background.ts
 
 ### Pending Todos
 
@@ -74,10 +80,10 @@ None yet.
 
 ### Blockers/Concerns
 
-None - Phase 03 complete. Extension service worker receives commands in real-time with auto-reconnection. Ready for Phase 04 content script implementation.
+None - Phase 04 complete. Content script executes video commands via HTMLMediaElement API. Complete command pipeline working. Ready for Phase 05 command acknowledgment.
 
 ## Session Continuity
 
 Last session: 2026-02-03
-Stopped at: Completed 03-02-PLAN.md - Convex subscription with reconnection (Phase 03 complete)
+Stopped at: Completed 04-01-PLAN.md - Video control implementation (Phase 04 complete)
 Resume file: None
