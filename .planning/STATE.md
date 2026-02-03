@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-02)
 
 **Core value:** She can control video playback without interrupting his work flow.
-**Current focus:** Phase 4 - Video Control (COMPLETE)
+**Current focus:** Phase 5 - Integration & Polish (IN PROGRESS)
 
 ## Current Position
 
-Phase: 4 of 5 (Video Control) - COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase complete - ready for Phase 05
-Last activity: 2026-02-03 - Completed 04-02-PLAN.md (human verification)
+Phase: 5 of 5 (Integration & Polish)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-03 - Completed 05-01-PLAN.md (Extension command acknowledgment)
 
-Progress: [██████████] 100%
+Progress: [██████████░] 91%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
-- Average duration: ~3 min automated work (checkpoint plans vary)
-- Total execution time: ~21 min automated work
+- Total plans completed: 10
+- Average duration: ~2.5 min automated work (checkpoint plans vary)
+- Total execution time: ~22.4 min automated work
 
 **By Phase:**
 
@@ -32,10 +32,11 @@ Progress: [██████████] 100%
 | 02-web-controller-app | 2 | 7.4 min | 3.7 min |
 | 03-extension-foundation | 2 | 3.3 min | 1.7 min |
 | 04-video-control | 2 | 3 min + checkpoint | 1.5 min |
+| 05-integration-polish | 1 | 1.4 min | 1.4 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~5 min), 03-01 (1.3 min), 03-02 (2 min), 04-01 (3 min), 04-02 (checkpoint)
-- Trend: Consistent fast execution; checkpoint verification adds user time
+- Last 5 plans: 03-01 (1.3 min), 03-02 (2 min), 04-01 (3 min), 04-02 (checkpoint), 05-01 (1.4 min)
+- Trend: Consistent fast execution; very quick integration tasks
 
 *Updated after each plan completion*
 
@@ -75,6 +76,9 @@ Recent decisions affecting current work:
 - [Phase 4]: skipLibCheck in tsconfig to handle convex imports from background.ts
 - [Phase 4]: all_frames: true for iframe video player support
 - [Phase 4]: webNavigation.getAllFrames for broadcasting to all frames
+- [Phase 5]: Acknowledge only after content script confirms success (response.success === true)
+- [Phase 5]: Try/catch for graceful network error handling on acknowledge calls
+- [Phase 5]: Track commandExecuted flag to prevent acknowledging failed executions
 
 ### Pending Todos
 
@@ -82,10 +86,10 @@ None yet.
 
 ### Blockers/Concerns
 
-None - Phase 04 complete. All 12 playback controls verified working end-to-end. Ready for Phase 05 integration and polish.
+None - 05-01 complete. Extension now acknowledges commands after successful execution. Ready for 05-02 web UI acknowledgment display.
 
 ## Session Continuity
 
 Last session: 2026-02-03
-Stopped at: Completed 04-02-PLAN.md - Human verification of all 12 controls (Phase 04 complete)
+Stopped at: Completed 05-01-PLAN.md - Extension command acknowledgment flow
 Resume file: None
