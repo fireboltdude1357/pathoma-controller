@@ -13,7 +13,7 @@ Build a remote video playback controller that lets one person control video play
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 0: Feasibility Spike** - Validate HTMLMediaElement API works on pcloud.link before full investment
-- [ ] **Phase 1: Backend Foundation** - Convex schema, Clerk authentication, real-time command infrastructure
+- [x] **Phase 1: Backend Foundation** - Convex schema, Clerk authentication, real-time command infrastructure
 - [ ] **Phase 2: Web Controller App** - Next.js app with command UI and connection status
 - [ ] **Phase 3: Extension Foundation** - Chrome extension with Convex subscription and service worker lifecycle
 - [ ] **Phase 4: Video Control** - Content script that executes commands on pcloud.link video player
@@ -46,8 +46,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md - Project setup with Next.js, Convex, Clerk and schema definition
-- [ ] 01-02-PLAN.md - Clerk auth middleware, Convex functions, and authorization wiring
+- [x] 01-01-PLAN.md - Project setup with Next.js, Convex, Clerk and schema definition
+- [x] 01-02-PLAN.md - Clerk auth middleware, Convex functions, and authorization wiring
 
 ### Phase 2: Web Controller App
 **Goal**: Next.js web app where authorized user can send playback commands and see connection status
@@ -114,7 +114,7 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 0. Feasibility Spike | 1/1 | Complete | 2026-02-02 |
-| 1. Backend Foundation | 0/2 | Not started | - |
+| 1. Backend Foundation | 2/2 | Complete | 2026-02-03 |
 | 2. Web Controller App | 0/0 | Not started | - |
 | 3. Extension Foundation | 0/0 | Not started | - |
 | 4. Video Control | 0/0 | Not started | - |
@@ -122,4 +122,4 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-02 (Phase 1 planned)*
+*Last updated: 2026-02-03 (Phase 1 complete)*

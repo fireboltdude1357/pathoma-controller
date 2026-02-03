@@ -15,9 +15,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Authentication
 
-- [ ] **AUTH-01**: User can log in via Clerk
-- [ ] **AUTH-02**: Only authorized emails (in Convex users table) can access controls
-- [ ] **AUTH-03**: Admin can add authorized emails directly in Convex dashboard
+- [x] **AUTH-01**: User can log in via Clerk
+- [x] **AUTH-02**: Only authorized emails (in Convex users table) can access controls
+- [x] **AUTH-03**: Admin can add authorized emails directly in Convex dashboard
 
 ### Playback Controls
 
@@ -89,9 +89,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SPIKE-01 | Phase 0 | Complete |
 | SPIKE-02 | Phase 0 | Complete |
 | SPIKE-03 | Phase 0 | Complete |
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
 | PLAY-01 | Phase 4 | Pending |
 | PLAY-02 | Phase 4 | Pending |
 | PLAY-03 | Phase 4 | Pending |
@@ -119,4 +119,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-02-02*
-*Last updated: 2025-02-02 after initial definition*
+*Last updated: 2026-02-03 (Phase 1 requirements complete)*
