@@ -1,90 +1,45 @@
-# Welcome to your Convex functions directory!
+# Convex Backend - Pathoma Controller
 
-Write your Convex functions here.
-See https://docs.convex.dev/functions for more.
+## Schema Overview
 
-A query function that takes two arguments looks like:
+### `users` table
+Authorized users who can send video commands.
 
-```ts
-// convex/myFunctions.ts
-import { query } from "./_generated/server";
-import { v } from "convex/values";
+| Field | Type | Description |
+|-------|------|-------------|
+| email | string | User's email (indexed for lookup) |
+| name | string? | Optional display name |
+| createdAt | number | Unix timestamp of creation |
 
-export const myQueryFunction = query({
-  // Validators for arguments.
-  args: {
-    first: v.number(),
-    second: v.string(),
-  },
+**Index:** `by_email` - Fast email lookup for authorization
 
-  // Function implementation.
-  handler: async (ctx, args) => {
-    // Read the database as many times as you need here.
-    // See https://docs.convex.dev/database/reading-data.
-    const documents = await ctx.db.query("tablename").collect();
+**Authorization Model:** Admin manually adds authorized email addresses directly in the Convex dashboard. When a user signs in via Clerk, their email is checked against this table.
 
-    // Arguments passed from the client are properties of the args object.
-    console.log(args.first, args.second);
+### `commands` table
+Video control commands sent from the web app to the browser extension.
 
-    // Write arbitrary JavaScript here: filter, aggregate, build derived data,
-    // remove non-public properties, or create new objects.
-    return documents;
-  },
-});
-```
+| Field | Type | Description |
+|-------|------|-------------|
+| type | union | Command type: play, pause, seekForward, seekBackward, speedUp, speedDown |
+| amount | number? | Optional: seconds for seek, delta for speed |
+| userId | string | Clerk user ID who sent the command |
+| createdAt | number | Unix timestamp for ordering |
+| acknowledged | boolean | Has extension processed this command? |
+| acknowledgedAt | number? | When extension acknowledged |
 
-Using this query function in a React component looks like:
+**Index:** `by_createdAt` - Fetch recent commands in order
 
-```ts
-const data = useQuery(api.myFunctions.myQueryFunction, {
-  first: 10,
-  second: "hello",
-});
-```
+## Usage
 
-A mutation function looks like:
+Commands flow:
+1. Web app sends command via Convex mutation
+2. Extension polls for unacknowledged commands via Convex query
+3. Extension executes command on video element
+4. Extension acknowledges command via Convex mutation
 
-```ts
-// convex/myFunctions.ts
-import { mutation } from "./_generated/server";
-import { v } from "convex/values";
+## Functions (Added in Plan 02)
 
-export const myMutationFunction = mutation({
-  // Validators for arguments.
-  args: {
-    first: v.string(),
-    second: v.string(),
-  },
-
-  // Function implementation.
-  handler: async (ctx, args) => {
-    // Insert or modify documents in the database here.
-    // Mutations can also read from the database like queries.
-    // See https://docs.convex.dev/database/writing-data.
-    const message = { body: args.first, author: args.second };
-    const id = await ctx.db.insert("messages", message);
-
-    // Optionally, return a value from your mutation.
-    return await ctx.db.get("messages", id);
-  },
-});
-```
-
-Using this mutation function in a React component looks like:
-
-```ts
-const mutation = useMutation(api.myFunctions.myMutationFunction);
-function handleButtonPress() {
-  // fire and forget, the most common way to use mutations
-  mutation({ first: "Hello!", second: "me" });
-  // OR
-  // use the result once the mutation has completed
-  mutation({ first: "Hello!", second: "me" }).then((result) =>
-    console.log(result),
-  );
-}
-```
-
-Use the Convex CLI to push your functions to a deployment. See everything
-the Convex CLI can do by running `npx convex -h` in your project root
-directory. To learn more, launch the docs with `npx convex docs`.
+- `commands.send` - Mutation to create new command
+- `commands.getLatest` - Query for unacknowledged commands
+- `commands.acknowledge` - Mutation to mark command processed
+- `users.isAuthorized` - Query to check email authorization
