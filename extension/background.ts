@@ -11,8 +11,8 @@ interface ExtensionState {
 async function getState(): Promise<ExtensionState> {
   const result = await chrome.storage.local.get(['lastCommandId', 'connected']);
   return {
-    lastCommandId: result.lastCommandId ?? null,
-    connected: result.connected ?? false,
+    lastCommandId: (result.lastCommandId as string | undefined) ?? null,
+    connected: (result.connected as boolean | undefined) ?? false,
   };
 }
 
