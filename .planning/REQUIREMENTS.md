@@ -21,18 +21,18 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Playback Controls
 
-- [ ] **PLAY-01**: User can pause the video
-- [ ] **PLAY-02**: User can play the video
-- [ ] **PLAY-03**: User can seek backward by 1 second
-- [ ] **PLAY-04**: User can seek backward by 5 seconds
-- [ ] **PLAY-05**: User can seek backward by 10 seconds
-- [ ] **PLAY-06**: User can seek backward by 30 seconds
-- [ ] **PLAY-07**: User can seek forward by 1 second
-- [ ] **PLAY-08**: User can seek forward by 5 seconds
-- [ ] **PLAY-09**: User can seek forward by 10 seconds
-- [ ] **PLAY-10**: User can seek forward by 30 seconds
-- [ ] **PLAY-11**: User can decrease playback speed by 0.1x
-- [ ] **PLAY-12**: User can increase playback speed by 0.1x
+- [x] **PLAY-01**: User can pause the video
+- [x] **PLAY-02**: User can play the video
+- [x] **PLAY-03**: User can seek backward by 1 second
+- [x] **PLAY-04**: User can seek backward by 5 seconds
+- [x] **PLAY-05**: User can seek backward by 10 seconds
+- [x] **PLAY-06**: User can seek backward by 30 seconds
+- [x] **PLAY-07**: User can seek forward by 1 second
+- [x] **PLAY-08**: User can seek forward by 5 seconds
+- [x] **PLAY-09**: User can seek forward by 10 seconds
+- [x] **PLAY-10**: User can seek forward by 30 seconds
+- [x] **PLAY-11**: User can decrease playback speed by 0.1x
+- [x] **PLAY-12**: User can increase playback speed by 0.1x
 
 ### Connection
 
@@ -44,7 +44,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **EXT-01**: Extension targets pcloud.link tabs
 - [x] **EXT-02**: Extension subscribes to commands via Convex real-time
-- [ ] **EXT-03**: Extension executes commands via HTMLMediaElement API (not keyboard simulation)
+- [x] **EXT-03**: Extension executes commands via HTMLMediaElement API (not keyboard simulation)
 - [ ] **EXT-04**: Extension sends acknowledgment after command execution
 
 ## v2 Requirements
@@ -92,24 +92,24 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-01 | Phase 1 | Complete |
 | AUTH-02 | Phase 1 | Complete |
 | AUTH-03 | Phase 1 | Complete |
-| PLAY-01 | Phase 4 | Pending |
-| PLAY-02 | Phase 4 | Pending |
-| PLAY-03 | Phase 4 | Pending |
-| PLAY-04 | Phase 4 | Pending |
-| PLAY-05 | Phase 4 | Pending |
-| PLAY-06 | Phase 4 | Pending |
-| PLAY-07 | Phase 4 | Pending |
-| PLAY-08 | Phase 4 | Pending |
-| PLAY-09 | Phase 4 | Pending |
-| PLAY-10 | Phase 4 | Pending |
-| PLAY-11 | Phase 4 | Pending |
-| PLAY-12 | Phase 4 | Pending |
+| PLAY-01 | Phase 4 | Complete |
+| PLAY-02 | Phase 4 | Complete |
+| PLAY-03 | Phase 4 | Complete |
+| PLAY-04 | Phase 4 | Complete |
+| PLAY-05 | Phase 4 | Complete |
+| PLAY-06 | Phase 4 | Complete |
+| PLAY-07 | Phase 4 | Complete |
+| PLAY-08 | Phase 4 | Complete |
+| PLAY-09 | Phase 4 | Complete |
+| PLAY-10 | Phase 4 | Complete |
+| PLAY-11 | Phase 4 | Complete |
+| PLAY-12 | Phase 4 | Complete |
 | CONN-01 | Phase 2 | Complete |
 | CONN-02 | Phase 3 | Complete |
 | CONN-03 | Phase 5 | Pending |
 | EXT-01 | Phase 3 | Complete |
 | EXT-02 | Phase 3 | Complete |
-| EXT-03 | Phase 4 | Pending |
+| EXT-03 | Phase 4 | Complete |
 | EXT-04 | Phase 5 | Pending |
 
 **Coverage:**
@@ -119,4 +119,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-02-02*
-*Last updated: 2026-02-03 (Phase 3 requirements complete)*
+*Last updated: 2026-02-03 (Phase 4 requirements complete)*

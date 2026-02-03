@@ -5,22 +5,22 @@
 See: .planning/PROJECT.md (updated 2026-02-02)
 
 **Core value:** She can control video playback without interrupting his work flow.
-**Current focus:** Phase 4 - Video Control (in progress)
+**Current focus:** Phase 4 - Video Control (COMPLETE)
 
 ## Current Position
 
-Phase: 4 of 5 (Video Control)
-Plan: 1 of 1 in current phase
+Phase: 4 of 5 (Video Control) - COMPLETE
+Plan: 2 of 2 in current phase
 Status: Phase complete - ready for Phase 05
-Last activity: 2026-02-03 - Completed 04-01-PLAN.md
+Last activity: 2026-02-03 - Completed 04-02-PLAN.md (human verification)
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: ~3.3 min automated work (checkpoint plans vary)
+- Total plans completed: 9
+- Average duration: ~3 min automated work (checkpoint plans vary)
 - Total execution time: ~21 min automated work
 
 **By Phase:**
@@ -31,11 +31,11 @@ Progress: [████████░░] 80%
 | 01-backend-foundation | 2 | 7 min | 3.5 min |
 | 02-web-controller-app | 2 | 7.4 min | 3.7 min |
 | 03-extension-foundation | 2 | 3.3 min | 1.7 min |
-| 04-video-control | 1 | 3 min | 3 min |
+| 04-video-control | 2 | 3 min + checkpoint | 1.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~5 min), 03-01 (1.3 min), 03-02 (2 min automated), 04-01 (3 min)
-- Trend: Consistent fast execution; checkpoint verification adds user time (not automation time)
+- Last 5 plans: 02-02 (~5 min), 03-01 (1.3 min), 03-02 (2 min), 04-01 (3 min), 04-02 (checkpoint)
+- Trend: Consistent fast execution; checkpoint verification adds user time
 
 *Updated after each plan completion*
 
@@ -73,6 +73,8 @@ Recent decisions affecting current work:
 - [Phase 4]: Seek bounds: clamp currentTime to [0, duration]
 - [Phase 4]: @types/chrome for TypeScript chrome API types
 - [Phase 4]: skipLibCheck in tsconfig to handle convex imports from background.ts
+- [Phase 4]: all_frames: true for iframe video player support
+- [Phase 4]: webNavigation.getAllFrames for broadcasting to all frames
 
 ### Pending Todos
 
@@ -80,10 +82,10 @@ None yet.
 
 ### Blockers/Concerns
 
-None - Phase 04 complete. Content script executes video commands via HTMLMediaElement API. Complete command pipeline working. Ready for Phase 05 command acknowledgment.
+None - Phase 04 complete. All 12 playback controls verified working end-to-end. Ready for Phase 05 integration and polish.
 
 ## Session Continuity
 
 Last session: 2026-02-03
-Stopped at: Completed 04-01-PLAN.md - Video control implementation (Phase 04 complete)
+Stopped at: Completed 04-02-PLAN.md - Human verification of all 12 controls (Phase 04 complete)
 Resume file: None

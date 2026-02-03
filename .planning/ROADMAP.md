@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Backend Foundation** - Convex schema, Clerk authentication, real-time command infrastructure
 - [x] **Phase 2: Web Controller App** - Next.js app with command UI and connection status
 - [x] **Phase 3: Extension Foundation** - Chrome extension with Convex subscription and service worker lifecycle
-- [ ] **Phase 4: Video Control** - Content script that executes commands on pcloud.link video player
+- [x] **Phase 4: Video Control** - Content script that executes commands on pcloud.link video player
 - [ ] **Phase 5: Integration & Polish** - End-to-end acknowledgments, error handling, production readiness
 
 ## Phase Details
@@ -92,8 +92,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md - Content script with video control and service worker messaging
-- [ ] 04-02-PLAN.md - End-to-end verification of all 12 playback controls
+- [x] 04-01-PLAN.md - Content script with video control and service worker messaging
+- [x] 04-02-PLAN.md - End-to-end verification of all 12 playback controls
 
 ### Phase 5: Integration & Polish
 **Goal**: End-to-end command acknowledgment, error handling, and production readiness
@@ -120,9 +120,9 @@ Phases execute in numeric order: 0 -> 1 -> 2 -> 3 -> 4 -> 5
 | 1. Backend Foundation | 2/2 | Complete | 2026-02-03 |
 | 2. Web Controller App | 2/2 | Complete | 2026-02-03 |
 | 3. Extension Foundation | 2/2 | Complete | 2026-02-03 |
-| 4. Video Control | 0/2 | In Progress | - |
+| 4. Video Control | 2/2 | Complete | 2026-02-03 |
 | 5. Integration & Polish | 0/0 | Not started | - |
 
 ---
 *Roadmap created: 2026-02-02*
-*Last updated: 2026-02-03 (Phase 4 planned)*
+*Last updated: 2026-02-03 (Phase 4 complete)*
