@@ -4929,7 +4929,23 @@ async function startSubscription() {
     }
     console.log("[Pathoma Controller] New command:", command.type, command.amount);
     await setState({ lastCommandId: command._id });
-    console.log("[Pathoma Controller] Command queued for execution");
+    try {
+      const tabs = await chrome.tabs.query({ url: "*://*.pcloud.link/*" });
+      if (tabs.length === 0) {
+        console.warn("[Pathoma Controller] No pcloud.link tab found");
+        return;
+      }
+      const tab = tabs[0];
+      if (tab.id) {
+        const response = await chrome.tabs.sendMessage(tab.id, {
+          type: command.type,
+          amount: command.amount
+        });
+        console.log("[Pathoma Controller] Command executed:", response);
+      }
+    } catch (error) {
+      console.error("[Pathoma Controller] Failed to send command to content script:", error);
+    }
   });
   await setState({ connected: true });
   console.log("[Pathoma Controller] Subscription active");
