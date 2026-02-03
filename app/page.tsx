@@ -8,6 +8,7 @@ import {
 } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import { ConnectionStatus } from "./components/ConnectionStatus";
 
 export default function Home() {
   const sendCommand = useMutation(api.commands.send);
@@ -18,9 +19,12 @@ export default function Home() {
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
           Pathoma Controller
         </h1>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
+        <div className="flex items-center gap-6">
+          <ConnectionStatus />
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
       </header>
 
       {/* Main Content */}
